@@ -1,79 +1,64 @@
 <!DOCTYPE html>
 <html>
-
-
-
 <head>
-    
     <title>
-    Bar Info
+        Bar Info
     </title>
-
-
-
 <style type="text/css">
-
-
-.gender label
-{
-
-  }
- span
- {
-   position: relative;
+span
+    {
+    position: relative;
     float: ; 
     display: inline;
- }   
+    }   
 body
-{
-background-color: #566A6B;
-}
+    {
+    background-color: #566A6B;
+    }
 input
-{
+    {
     background-color: rgba(104, 104, 107, 0.6);
- 
     padding: 0.3%;
     margin: 0.15%;
     display: inline;
     float: left;
     width: 15%;
-}
-
-label{
+    }
+label
+    {
     display: inline-block;
-     padding: 0.3%;
+    padding: 0.3%;
     margin: 0.15%;
     float: left;
     clear: left;
     width: 90px;
-
     text-align: left;
-}
+    }
 .image-upload > input
-{
+    {
     display: none;
-}
+    }
 </style>
-
 
 </head>
 <body>
- <div class="col-sm-5 ">
+<div class="col-sm-5 ">
                        
                         <div class="">
                             <label>*State :</label>
-                            <input type="state" placeholder="name" class="form-control" required="required">
+                            <input type="state" placeholder="State" class="form-control" required="required">
                         </div>
                        
                         <div class="">
                             <label>*Bar I.D :</label>
-                            <input type="email" placeholder="abc@xyz.com" class="form-control" required="required">
+                            <input type="email" placeholder="Bar I.D" class="form-control" required="required">
                         </div>
                        
                         <div class="">
                             <label>*Year :</label>
-                            <input type="text" placeholder="UserName" class="form-control" required="required ">
+                            <input type="text" placeholder="Year" class="form-control" required="required ">
                         </div>
+                        
                         <div class="image-upload">
                         <label>*Profile Pic :</label>
                         <form action="demo_form.asp">
@@ -88,22 +73,22 @@ label{
 
 
                         <div id="userphoto">
-    <a><div class="gravatar-wrapper-128"><img id="image" src="" alt="" class="logo" width="120" height="120"></div></a>
-    <div class="change-picture-slide" >
-        <input accept="image/*" type="file" id="upload" name="upload" style="visibility: hidden; width: 1px; height: 1px" />
-        <a href="" onclick="changePicture(); return false">Change Picture</a>
-    </div>
+                        <a><div class="gravatar-wrapper-128"><img id="image" src="" alt="" class="logo" width="120" height="120"></div></a>
+                        <div class="change-picture-slide" >
+                        <input accept="image/*" type="file" id="upload" name="upload" style="visibility: hidden; width: 1px; height: 1px" />
+                        <a href="" onclick="changePicture(); return false">Change Picture</a>
+                        </div>
 </div>
-<script>
-    function changePicture() {
-        //open the open file dialog
-        document.getElementById('upload').click();
-        var link = document.getElementById('upload').url;
-        //change picture
-        var img = document.getElementById("image");
-        img.src = link;
-    }
-</script>
+                        <script>
+                            function changePicture() {
+                                //open the open file dialog
+                                document.getElementById('upload').click();
+                                var link = document.getElementById('upload').url;
+                                //change picture
+                                var img = document.getElementById("image");
+                                img.src = link;
+                            }
+                        </script>
 
                         </div>
 

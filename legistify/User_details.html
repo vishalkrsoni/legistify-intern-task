@@ -66,9 +66,11 @@ label{
 function addInput(divName){
     
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = " <br><input type='text'  name='myInputs[]'><br>" + "<br><input type='text' name='myInputs[]'>" + "<br><input type='text' name='myInputs[]'>";
+          newdiv.innerHTML = " <br><input type='text'  name='Enter college Name'><br>" + "<br><input type='text' name='Degree'>" + "<br><input type='text' name='Year of graduation'>";
           document.getElementById(divName).appendChild(newdiv);
-          
+         document.getElementsByName('Enter college Name')[0].placeholder='Enter college Name'; 
+         document.getElementsByName('Degree')[0].placeholder='Degree';
+         document.getElementsByName('Year of graduation')[0].placeholder='Year of graduation';
      
 }
 
