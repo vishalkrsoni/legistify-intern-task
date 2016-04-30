@@ -9,7 +9,8 @@
     </title>
 
 
-
+<script src="jquery-2.2.3.js"></script>
+<script src="jquery-2.2.3.min.js"></script>
 <style type="text/css">
 
 
@@ -61,13 +62,14 @@ label{
 </style>
 
 <script type="text/javascript">
-
-var add = function() {
-    var mainDiv = document.getElementById('alldivs');
-    var newDiv = document.createElement('div');
-    newDiv.className = "";
-    newDiv.innerHTML = '<input type="text" />';
-    mainDiv.appendChild(newDiv);
+ 
+function addInput(divName){
+    
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = " <br><input type='text'  name='myInputs[]'><br>" + "<br><input type='text' name='myInputs[]'>" + "<br><input type='text' name='myInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          
+     
 }
 
 </script>
@@ -117,15 +119,26 @@ var add = function() {
                             <input type="Number" placeholder="Contact No." class="form-control" required="required ">
                         </div>
                        
-                        <div class="alldivs">
+                        
+
+                            <form method="POST">
+                             <div id="dynamicInput">
+                    
+
+<div class="">
                             <label>*Education :</label>
-                            <div class="alldivs">
+                            <div class="dynamicInput">
                             <input type="text" placeholder="Enter college Name"  style=" display:inline-block;" required="required">
                             <input type="text" placeholder="Degree"  style=" display: inline-block;" required="required">
                             <input type="number" placeholder="Year of graduation"  required="required">
                             </div>
-                            <button name="add"  onclick="add()" > Add </button>
+                            <button name="add"  value="add " onClick="addInput('dynamicInput');"> Add </button>
                            
+
+                      <br>
+     </div>
+     
+</form>
                         
                         </div>
 </div>
