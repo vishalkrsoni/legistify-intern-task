@@ -32,6 +32,26 @@ width:60%;
    margin-right: 18%;
 
 }
+
+
+#user-details
+{
+position: relative;
+
+}
+input, textarea {
+ 
+  display: block;
+ 
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
 input
 {
     background-color: rgba(104, 104, 107, 0.6);
@@ -252,14 +272,14 @@ function save_bar_data(){
 
 <script type="text/javascript">
     function save_user_data(){
-     var name = document.getElementById('name').value;
-     var email = document.getElementById('email').value;
-     var dateofbirth = document.getElementById('dateofbirth').value;
- var college = document.getElementById('college').value;
-  var degree = document.getElementById('degree').value;
-   var mobile = document.getElementById('mobile').value;
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var dateofbirth = document.getElementById('dateofbirth').value;
+    var college = document.getElementById('college').value;
+    var degree = document.getElementById('degree').value;
+    var mobile = document.getElementById('mobile').value;
     var year_of_edu = document.getElementById('year_of_edu').value;
-
+    var username = document.getElementById('username').value;
 
 
      //console.log(bar_state);
@@ -271,6 +291,7 @@ function save_bar_data(){
      localStorage.setItem("degree", degree);
      localStorage.setItem("year_of_edu", year_of_edu);
      localStorage.setItem("gen", gen);
+     localStorage.setItem("username", username);
 }
 
 </script>
@@ -295,7 +316,7 @@ function save_bar_data(){
                         
                         <div class="">
                             <label>*Password :</label>
-                            <input type="passwo" placeholder="Password" id="password" class="form-control" required="required ">
+                            <input type="password" placeholder="Password" id="password" class="form-control" required="required ">
                         </div>
                         
                         <div class="">
@@ -328,10 +349,9 @@ function save_bar_data(){
                         <button name="add"  value="add " onClick="addInput('dynamicInput');"> Add </button>
                         <br>
                         </div>
-                        <button type="submit" onClick="save_user_data()">save</button></div>
-                </div>
+                        <button type="submit" onClick="save_user_data()">save</button>
+
 							
-</div>
 </div>
 
 <!--Basic details-->
@@ -339,7 +359,7 @@ function save_bar_data(){
 
                         <div class="summary">
                             <label>*Summary :</label>
-                            <textarea  placeholder="Min 160 characters" id="message" required="required" class="form-control" rows="8">
+                            <textarea  placeholder="Min 160 characters" id="summary" required="required" class="form-control" rows="8">
                                 
                             </textarea>
                         </div>     
@@ -347,35 +367,73 @@ function save_bar_data(){
                         <div id="dynamic">  
                         <div class="experience">
                             <label>*Experience :</label>
-                            <input type="text" placeholder="Job title" class="form-control" required="required">
-                            <input type="text" placeholder="Company name" class="form-control" required="required">
+                            <input type="text" placeholder="Job title" id="job_title" class="form-control" required="required">
+                            <input type="text" placeholder="Company name" id="company_name" class="form-control" required="required">
                             <label>From</label>
-                            <input type="number" name="Year of graduation" placeholder="from"  class="form-control" required="required">
+                            <input type="number" name="Year of graduation" id="year_from" placeholder="from"  class="form-control" required="required">
                             <label>To</label>
-                            <input type="number" name="Year of graduation" placeholder="to"  class="form-control" required="required">
+                            <input type="number" name="Year of graduation" placeholder="to" id="year_to" class="form-control" required="required">
                             <button onClick="addfield('dynamic');">Add</button>
                         </div>
                         </div>
                                 
                         <div class="honours" id="dynamic1">
                             <label>Honours :</label>
-                            <input type="text" placeholder="Name" class="form-control" required="">
-                            <input type="text" placeholder="Granted by" class="form-control" required="">
-                            <input type="number" placeholder="Year"   class="form-control" required="">
+                            <input type="text" placeholder="Name" id="honour_name" class="form-control" required="">
+                            <input type="text" placeholder="Granted by" id="h_granted_by" class="form-control" required="">
+                            <input type="number" placeholder="Year"  id="honour_year" class="form-control" required="">
                            <button onClick="addfield1('dynamic1');">Add</button>
                         </div>
 
 
                          <div class="publications" id="dynamic2">
                             <label>*Pubications :</label>
-                            <input type="text" placeholder="Granted by" class="form-control" required="required">
-                            <input type="number" placeholder="Year"   class="form-control" required="required">
+                            <input type="text" placeholder="Granted by" id="p_granted_by" class="form-control" required="required">
+                            <input type="number" placeholder="Year" id="p_year"  class="form-control" required="required">
                            <button onClick="addfield2('dynamic2');" class="add-btn">Add</button>
                         </div>
 
+<button type="submit" onClick="save_basic_data()">save</button>
+</div>
+</div>
 
-</div>
-</div>
+
+
+
+<script type="text/javascript">
+    function save_basic_data(){
+    var summary = document.getElementById('summary').value;
+    var job_title = document.getElementById('job_title').value;
+    var company_name = document.getElementById('company_name').value;
+    var year_to = document.getElementById('year_to').value;
+    var year_from = document.getElementById('degree').value;
+    var honour_name = document.getElementById('honour_name').value;
+    var honour_year = document.getElementById('honour_year').value;
+    var h_granted_by = document.getElementById('h_granted_by').value;
+    var p_year = document.getElementById('p_year').value;
+    var p_granted_by = document.getElementById('p_granted_by').value;
+
+
+     //console.log(bar_state);
+     localStorage.setItem("summary", summary);
+     localStorage.setItem("job_title", job_title);
+     localStorage.setItem("company_name", company_name);
+     localStorage.setItem("year_to", year_to);
+     localStorage.setItem("year_from", year_from);
+     localStorage.setItem("honour_name", honour_name);
+     localStorage.setItem("honour_year", honour_year);
+     localStorage.setItem("h_granted_by", h_granted_by);
+     localStorage.setItem("p_year", p_year);
+     localStorage.setItem("p_granted_by", p_granted_by);
+}
+
+</script>
+
+
+
+
+
+
 <!--Bar Info-->
 
  <div class="barinfo " id="bar-info" style="display:none;">
@@ -434,32 +492,43 @@ function save_bar_data(){
                        
                         <div class="">
                             <label>*Practice Area :</label>
-                            <input type="" placeholder="select max 4 areas" class="form-control" required="required">
+                            <input type="" placeholder="select max 4 areas" id="p_area" class="form-control" required="required">
                         </div>
                        
                         <div class="" id="court">
                             <label>*Court :</label>
-                            <input type="email" placeholder="Add court " class="form-control" required="required">
+                            <input type="text" placeholder="Add court " id="court" class="form-control" required="required">
                             <button onClick="addfield4('court');">Add</button>
                         </div>
                         <div class="">
                             <label>*state :</label>
-                            <input type="" placeholder="State " class="form-control" required="required">
+                            <input type="text" placeholder="State " id="state" class="form-control" required="required">
                         </div>
                        
                         <div class="">
                             <label>*Office Address :</label>
-                            <input type="text" placeholder="Address" class="form-control" required="required ">
+                            <input type="text" placeholder="Address" id="address" class="form-control" required="required ">
                         </div>
 
 
 <button>save</button>
 
                         </div>
-
+<script type="text/javascript">
+function save_legal_data(){
+     var p_area = document.getElementById('p_area').value;
+     var court = document.getElementById('court').value;
+     var state = document.getElementById('state').value;
+     var address = document.getElementById('address').value;
+     //console.log(bar_state);
+     localStorage.setItem("p_area", p_area);
+     localStorage.setItem("court", court);
+     localStorage.setItem("state", state);
+     localStorage.setItem("address", address);
+}
+</script>
 
 </div>
-
 
 
 
