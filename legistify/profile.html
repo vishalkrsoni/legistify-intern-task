@@ -26,10 +26,16 @@
 <script type="text/javascript">
   function show_details(){
     console.log("hello");
-     console.log(localStorage.getItem("bar_state"));
-    document.getElementById('username').innerHTML=localStorage.getItem("bar_state");
+     console.log(localStorage.getItem("name"));
+    document.getElementById('username').innerHTML=localStorage.getItem("name");
+     console.log(localStorage.getItem("dateofbirth"));
+    document.getElementById('practice_Areas').innerHTML=localStorage.getItem("dateofbirth");
     
-
+  console.log(localStorage.getItem("mobile"));
+    document.getElementById('area1').innerHTML=localStorage.getItem("mobile");
+      console.log(localStorage.getItem("college"));
+    document.getElementById('area2').innerHTML=localStorage.getItem("college");
+    
 }
 
 </script>
@@ -74,7 +80,7 @@
     padding: 20px; " alt="" />
 
 <h3 class="col-sm-6" id="username" >User Name</h3>
-<h4 class="col-xs-7" id="practice Areas">Practice Areas</h5>
+<h4 class="col-xs-7" id="practice_Areas">Practice Areas</h5>
 <p class="col-xs-7" id="area1">Area1</p>
 <p class="col-xs-7" id="area2">Area2</p>
 <p class="col-xs-7" id="area3">Area3</p>
