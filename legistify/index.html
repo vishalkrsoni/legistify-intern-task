@@ -10,8 +10,6 @@
 <script src="jquery-2.2.3.js"></script>
 <script src="jquery-2.2.3.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
 <link href="main.css" rel="stylesheet" type="text/css" media="all" />
 <!--
@@ -22,6 +20,41 @@
 
 </head>
 <style type="text/css">
+#banner
+{
+background-color: rgba(152, 150, 79, 0.24);
+width:60%; 
+   max-width:60%; 
+   height: 50%
+   max-height:50%;
+   display: inline-block;
+   margin-left: 18%;
+   margin-right: 18%;
+
+}
+input
+{
+    background-color: rgba(104, 104, 107, 0.6);
+ 
+    padding: 0.3%;
+    margin: 0.15%;
+    display: inline;
+    float: left;
+    width: 15%;
+}
+.
+{
+    padding: 0.5%;
+}
+label{
+    display: inline-block;
+     padding: 0.3%;
+    margin: 0.15%;
+    float: left;
+    clear: left;
+    width: 90px;
+    text-align: left;
+}
 
 </style>
 <!--Image Upload-->
@@ -203,14 +236,10 @@ function save_bar_data(){
 	</div>
 
 
-	<div id="banner">
+<div id="banner">
 
 <!--FORMS List-->
 <div id="basic-form" style="display:none;" class="col-sm-6 col-xs-2">
-
-
-
-
 <div class="reg-form" id="vertical" >
 <ul>
   <li><a class="active" id="user">User details</a></li>
@@ -224,8 +253,8 @@ function save_bar_data(){
 
 
 <!--User Details-->
-<div class="col-sm-5" id="user-details" style="display:none;">
-                                              
+                <div class="col-sm-5" id="user-details" style="display:none;">
+                                 
                         <div class="">
                             <label>*Name :</label>
                             <input type="text" placeholder="name" class="form-control" required="required">
@@ -268,30 +297,19 @@ function save_bar_data(){
                             <input type="Number" placeholder="Contact No." class="form-control" required="required ">
                         </div>
                        
-                            <div id="dynamicInput">
-                            <label>*Education :</label>
-                            <input type="text" placeholder="Enter college Name"   required="required">
-                            <input type="text" placeholder="Degree"   required="required">
-                            <input type="number" placeholder="Year of graduation"  required="required">
-                            <button name="add"  value="add " onClick="addInput('dynamicInput');"> Add </button>
-                           	<br>
-                           	</div>
-
-
-<button>save</button></div>
-								</div>
+                        <div id="dynamicInput">
+                        <label>*Education :</label>
+                        <input type="text" placeholder="Enter college Name"   required="required">
+                        <input type="text" placeholder="Degree"   required="required">
+                        <input type="number" placeholder="Year of graduation"  required="required">
+                        <button name="add"  value="add " onClick="addInput('dynamicInput');"> Add </button>
+                        <br>
+                        </div>
+                        <button>save</button></div>
+                </div>
 							
-
 </div>
-
-							</div>
-
-
-
-
-
-
-
+</div>
 
 <!--Basic details-->
                         <div id="basic-details" style="display:none;" class="col-xs-4 col-md-3 col-md-offset-3">
@@ -303,7 +321,7 @@ function save_bar_data(){
                             </textarea>
                         </div>     
                         
-      <div id="dynamic">  
+                        <div id="dynamic">  
                         <div class="experience">
                             <label>*Experience :</label>
                             <input type="text" placeholder="Job title" class="form-control" required="required">
@@ -314,7 +332,7 @@ function save_bar_data(){
                             <input type="number" name="Year of graduation" placeholder="to"  class="form-control" required="required">
                             <button onClick="addfield('dynamic');">Add</button>
                         </div>
-</div>
+                        </div>
                                 
                         <div class="honours" id="dynamic1">
                             <label>Honours :</label>
