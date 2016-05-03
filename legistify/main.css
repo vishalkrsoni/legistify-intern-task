@@ -6,6 +6,86 @@ body {
 	font-size: 12px;
 	color: #8F8F8F;
 }
+ span
+ {
+   position: relative;
+    float: ; 
+    display: inline;
+ }   
+body
+{
+background-color: #566A6B;
+}
+input
+{
+    background-color: rgba(104, 104, 107, 0.6);
+ 
+    padding: 0.3%;
+    margin: 0.15%;
+    display: inline;
+    float: left;
+    width: 15%;
+}
+
+label{
+    display: inline-block;
+     padding: 0.3%;
+    margin: 0.15%;
+    float: left;
+    clear: left;
+    width: 90px;
+
+    text-align: left;
+}
+
+.image-upload > input
+{
+    display: none;
+}
+.reg-form
+{
+
+padding-top: 12%;
+padding-left: 6%;
+}
+.reg-form ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+}
+.reg-form li a {
+    display: block;
+    color: #000;
+    padding: 8px 1px;
+    text-decoration: none;
+}
+.reg-form li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+.reg-form li a:hover {
+    background-color: #555;
+    color: white;
+}
+.add-btn {
+    margin-top: 28%;
+}
+
+.basic-form
+{
+background-color: rgba(220, 234, 234, 0.14);
+width:1120 ;
+height:500;
+margin-left: 7%;
+margin-right: 7%;
+}
+textarea
+{
+    background-color: #566A6B;
+}
 
 h1, h2, h3 {
 	margin: 0;
@@ -73,6 +153,7 @@ a:hover {
 	color: #FFFFFF;
 }
 
+
 #menu {
 	float: right;
 	width: 810px;
@@ -113,6 +194,44 @@ a:hover {
 	border-radius: 5px;
 	color: #FFFFFF;
 }
+
+.details
+ {
+	
+	width: 50%;
+	height: 10%;
+	}
+
+.details ul {
+	float: right;
+	margin: 0;
+	list-style: none;
+	line-height: normal;
+
+}
+
+.details li {
+	
+	
+	
+	margin-left: 30%;
+}
+
+.details a {
+	display: block;
+	margin-left: 1px;
+	padding: 7px 20px 7px 20px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #FFFFFF;
+}
+
+
 
 #page-wrapper {
 	overflow: hidden;

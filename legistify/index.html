@@ -1,38 +1,382 @@
 <!DOCTYPE html PUBLIC>
-<html >
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Legistify</title>
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script src="jquery-2.2.3.js"></script>
+<script src="jquery-2.2.3.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <link href="main.css" rel="stylesheet" type="text/css" media="all" />
+<!--
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+-->
 
 </head>
+<style type="text/css">
+
+</style>
+<!--Image Upload-->
+<script>
+    function changePicture() {
+        //open the open file dialog
+        document.getElementById('upload').click();
+        var link = document.getElementById('upload').url;
+        //change picture
+        var img = document.getElementById("image");
+        img.src = link;
+    }
+//Getting Image path
+    $(function() {
+        $('input[type="file"]').on('change', function() {
+            $('#image').attr("src", $('input[type="file"]').val().split('\\')[2]);
+        });
+
+        $('#register').on('click', function(ev) {
+        	ev.preventDefault();
+        	$('#basic-form').css('display', 'block');
+       		$('#user-details').css('display', 'block');
+        	$('#legal-info').css('display', 'none');
+        	$('#basic-details').css('display', 'none');
+        	$('#bar-info').css('display', 'none');
+
+        })
+
+
+
+
+
+$('#user').on('click', function(ev) {
+        	ev.preventDefault();
+        	$('#user-details').css('display', 'block');
+        	$('#legal-info').css('display', 'none');
+        	$('#basic-details').css('display', 'none');
+        	$('#bar-info').css('display', 'none');
+
+        })
+$('#legal').on('click', function(ev) {
+        	ev.preventDefault();
+        	$('#user-details').css('display', 'none');
+        	$('#legal-info').css('display', 'block');
+        	$('#basic-details').css('display', 'none');
+        	$('#bar-info').css('display', 'none');
+        })
+$('#basic').on('click', function(ev) {
+        	ev.preventDefault();
+        	$('#user-details').css('display', 'none');
+        	$('#legal-info').css('display', 'none');
+        	$('#basic-details').css('display', 'block');
+        	$('#bar-info').css('display', 'none');       
+        	 })
+$('#bar').on('click', function(ev) {
+        	ev.preventDefault();
+        	$('#user-details').css('display', 'none');
+        	$('#legal-info').css('display', 'none');
+        	$('#basic-details').css('display', 'none');
+        	$('#bar-info').css('display', 'block');
+        })
+
+    })
+</script>
+ 
+<!--Dynamic addition of 3 input fields-->
+<script type="text/javascript">
+function addInput(divName){
+    
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = " <br><input type='text'  name='Enter college Name'><br>" + "<br><input type='text' name='Degree'>" + "<br><input type='text' name='Year of graduation'>";
+          document.getElementById(divName).appendChild(newdiv);
+         document.getElementsByName('Enter college Name')[0].placeholder='Enter college Name'; 
+         document.getElementsByName('Degree')[0].placeholder='Degree';
+         document.getElementsByName('Year of graduation')[0].placeholder='Year of graduation';
+     
+}
+
+  </script>
+
+<!--show/hide-->
+<script type="text/javascript">
+	
+// $("#login").on(click(function(){
+//     $("#basic-form").hide();
+// }));
+
+	$('#login').on('click', function() {
+		 $("#basic-form").hide();//
+	});
+
+	 $("#register").click(function(){
+        $("#basic-form").show();
+    });
+</script>
+
 <body>
 <div id="head">
-	<div id="header">
+<!--Header-->
+
+	<div id="header" >
 		<div id="logo">
 			<h1><a href="https://www.legistify.com/">Legistify</a></h1>
 			</div>
 		<div id="menu">
 			<ul>
-				<li class="">
+				<li class="tags">
 				<a href="" title="">About</a></li>
 				<li><a href="">Documents</a></li>
 				<li><a href="" >Research</a></li>
-				<li><a href="" >Login</a></li>
-				<li><a href="#" >Register</a></li>
+				<li><a href="" id="login" >Login</a></li>
+				<li><a href="" id="register" >Register</a></li>
 			</ul>
 		</div>
 	</div>
+
+
 	<div id="banner">
 		<div class="img-border"> <a href="#"><img src="images/header-img.jpg" width="1120" height="500" alt="" /></a> </div>
 	</div>
+
+<!--FORMS List-->
+<div id="basic-form" style="display:;" class="col-sm-6 col-xs-2">
+
+
+
+
+<div class="reg-form" id="vertical" style=" border-right: thick solid  red;">
+<ul>
+  <li><a class="active" id="user">User details</a></li>
+  <li><a id="legal">Legal Info</a></li>
+  <li><a id="basic">Basic detais</a></li>
+  <li><a id="bar">Bar Info</a></li>
+</ul>
+</div>
 </div>
 
+
+
+<!--User Details-->
+<div class="col-sm-5" id="user-details" style="display:none;">
+                                              
+                        <div class="">
+                            <label>*Name :</label>
+                            <input type="text" placeholder="name" class="form-control" required="required">
+                        </div>
+                       
+                        <div class="">
+                            <label>*Email :</label>
+                            <input type="email" placeholder="abc@xyz.com" class="form-control" required="required">
+                        </div>
+                       
+                        <div class="">
+                            <label>*Username :</label>
+                            <input type="text" placeholder="UserName" class="form-control" required="required ">
+                        </div>
+                        
+                        <div class="">
+                            <label>*Password :</label>
+                            <input type="passwo" placeholder="Password" class="form-control" required="required ">
+                        </div>
+                        
+                        <div class="">
+                            <label>*Date Of Birth :</label>
+                            <input type="date" placeholder="Date Of birth" class="form-control" required="required ">
+                        </div>
+                          
+                        
+                        <div class="gender" style=" display: block;">
+                        <label >*Gender :</label>
+                        <label class="radio inline" style=" display: block;">
+                        <input type="radio" name="sex" value="male" checked>Male<br>
+                        </label>
+                        <label class="radio inline" style=" display: block;"> 
+                        <input type="radio" name="sex" value="female">Female<br> 
+                        </label>
+                        </div>
+
+                        
+                        <div class="">
+                            <label>*Mobile :</label>
+                            <input type="Number" placeholder="Contact No." class="form-control" required="required ">
+                        </div>
+                       
+                        
+
+                            
+                            <div id="dynamicInput">
+							<div class="">
+                            <label>*Education :</label>
+                            
+                            <input type="text" placeholder="Enter college Name"   required="required">
+                            <input type="text" placeholder="Degree"   required="required">
+                            <input type="number" placeholder="Year of graduation"  required="required">
+                            </div>
+                            <button name="add"  value="add " onClick="addInput('dynamicInput');"> Add </button>
+                           	<br>
+                           	</div>
+
+
+<button>save</button></div>
+								</div>
+							
+
+</div>
+
+							</div>
+
+
+
+
+
+
+
+
+<!--Basic details-->
+                        <div id="basic-details" style="display:none;" class="col-xs-4 col-md-3 col-md-offset-3">
+
+                        <div class="summary">
+                            <label>*Summary :</label>
+                            <textarea  placeholder="Min 160 characters" id="message" required="required" class="form-control" rows="8">
+                                
+                            </textarea>
+                        </div>     
+                        
+        
+                        <div class="experience">
+                            <label>*Experience :</label>
+                            <input type="text" placeholder="Job title" class="form-control" required="required">
+                            <input type="text" placeholder="Company name" class="form-control" required="required">
+                            <label>From</label>
+                            <input type="number" name="Year of graduation" placeholder="from"  class="form-control" required="required">
+                            <label>To</label>
+                            <input type="number" name="Year of graduation" placeholder="to"  class="form-control" required="required">
+                            <button>Add</button>
+                        </div>
+
+                                
+                        <div class="honours">
+                            <label>Honours :</label>
+                            <input type="text" placeholder="Name" class="form-control" required="">
+                            <input type="text" placeholder="Granted by" class="form-control" required="">
+                            <input type="number" placeholder="Year"   class="form-control" required="">
+                           <button>Add</button>
+                        </div>
+
+
+                         <div class="publications">
+                            <label>*Pubications :</label>
+                            <input type="text" placeholder="Granted by" class="form-control" required="required">
+                            <input type="number" placeholder="Year"   class="form-control" required="required">
+                           <button class="add-btn">Add</button>
+                        </div>
+
+
+</div>
+</div>
+<!--Bar Info-->
+
+ <div class="barinfo " id="bar-info" style="display:none;">
+                       
+                        <div class="">
+                            <label>*State :</label>
+                            <input type="state" placeholder="name" class="form-control" required="required">
+                        </div>
+                       
+                        <div class="">
+                            <label>*Bar I.D :</label>
+                            <input type="email" placeholder="abc@xyz.com" class="form-control" required="required">
+                        </div>
+                       
+                        <div class="">
+                            <label>*Year :</label>
+                            <input type="text" placeholder="UserName" class="form-control" required="required ">
+                        </div>
+      
+                        <div class="image-upload">
+                        <label>*Profile Pic :</label>
+                        <form action="demo_form.asp">
+                        <input type="file" name="pic" accept="image/*"  required="required ">
+      	                </form>
+                        </div>
+        
+                       <div id="userphoto">
+    					<a>
+    					<div class="gravatar-wrapper-128">
+    					<img id="image" src="" alt="" class="logo" width="120" height="120">
+    					</div>
+    					</a>
+    					</div>
+    					<button type="submit">save</button>
+<!--    <div class="change-picture-slide" >
+        <input accept="image/*" type="file" id="upload" name="upload" style="visibility: hidden; width: 1px; height: 1px" />
+        <a href="" onclick="changePicture(); return false">Change Picture</a>
+    </div>
+</div>
+-->
+
+
+
+
+
+
+
+</div>
+</div>
+
+<!--Legal Info-->
+<div class="col-sm-5" id="legal-info" style="display:none;">
+                       
+                        <div class="">
+                            <label>*Practice Area :</label>
+                            <input type="" placeholder="select max 4 areas" class="form-control" required="required">
+                        </div>
+                       
+                        <div class="">
+                            <label>*Court :</label>
+                            <input type="email" placeholder="Add court " class="form-control" required="required">
+                        </div>
+                        <div class="">
+                            <label>*state :</label>
+                            <input type="" placeholder="State " class="form-control" required="required">
+                        </div>
+                       
+                        <div class="">
+                            <label>*Office Address :</label>
+                            <input type="text" placeholder="Address" class="form-control" required="required ">
+                        </div>
+
+
+<button>save</button>
+
+                        </div>
+
+
+</div>
+
+
+
+<!--User Profile-->
+
+		<div class="details" style="">
+			<ul>
+				<li class="">
+				<a href="" >About</a></li>
+				<li>
+				<a href="">Reviews</a></li>
 				
+			</ul>
 		</div>
-	</div>
+
+</div>
+
 </div>
 </div>
 </body>
