@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Legistify</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script src="jquery-2.2.3.js"></script>
+<script src="jquery-2.2.3.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<link href="main.css" rel="stylesheet" type="text/css" media="all" />
+<!--
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+-->
+
+</head>
+<script type="text/javascript">
+  function show_details(){
+    console.log("hello");
+     console.log(localStorage.getItem("bar_state"));
+    document.getElementById('username').innerHTML=localStorage.getItem("bar_state");
+    
+
+}
+
+</script>
+
+<!--show/hide-->
+
+<body onLoad="show_details()">
+<div id="head">
+<!--Header-->
+
+	<div id="header" >
+		<div id="logo">
+			<h1><a href="https://www.legistify.com/">Legistify</a></h1>
+			</div>
+		<div id="menu">
+			<ul>
+				<li class="tags">
+				<a href="" title="">About</a></li>
+				<li><a href="">Documents</a></li>
+				<li><a href="" >Research</a></li>
+				<li><a href="" id="login" >Login</a></li>
+				<li><a href="" id="register" >Register</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div id="banner">
+
+
+                       <div id="userphoto" class="col-sm-2">
+                        <a>
+                        <div class="gravatar-wrapper-128">
+                        <img id="image" src="" alt="" class="logo" width="160" height="160">
+                        </div>
+                        </a>
+                        </div>
+		<div  id="img-details" style="width:1120; height:500   border-radius: 25px;
+ 
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px; " alt="" />
+
+<h3 class="col-sm-6" id="username" >User Name</h3>
+<h4 class="col-xs-7" id="practice Areas">Practice Areas</h5>
+<p class="col-xs-7" id="area1">Area1</p>
+<p class="col-xs-7" id="area2">Area2</p>
+<p class="col-xs-7" id="area3">Area3</p>
+
+
+
+         </div>
+	</div>
+
+
+
+<!--User Profile-->
+
+		<div class="details" style="">
+			<ul>
+				<li class="">
+				<a href="" >About</a></li>
+				<li>
+				<a href="">Reviews</a></li>
+				
+			</ul>
+		</div>
+
+</div>
+
+</div>
+</div>
+</body>
+</html>

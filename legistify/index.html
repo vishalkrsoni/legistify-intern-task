@@ -7,14 +7,12 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Legistify</title>
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+<script src="jquery-2.2.3.js"></script>
+<script src="jquery-2.2.3.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<script src="jquery-2.2.3.js"></script>
-<script src="jquery-2.2.3.min.js"></script>
 
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap.js"></script>
 <link href="main.css" rel="stylesheet" type="text/css" media="all" />
 <!--
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -154,6 +152,13 @@ function addfield4(divName){
          
      
 }
+function save_bar_data(){
+     var bar_state = document.getElementById('bar_state').value;
+     var bar_id = document.getElementById('bar_id').value;
+     var bar_year = document.getElementById('bar_year').value;
+     //console.log(bar_state);
+     localStorage.setItem("bar_state", bar_state);
+}
 
 
 
@@ -199,31 +204,6 @@ function addfield4(divName){
 
 
 	<div id="banner">
-
-
-                       <div id="userphoto" class="col-sm-2">
-                        <a>
-                        <div class="gravatar-wrapper-128">
-                        <img id="image" src="" alt="" class="logo" width="160" height="160">
-                        </div>
-                        </a>
-                        </div>
-		<div  id="img-details" style="width:1120; height:500   border-radius: 25px;
- 
-    background-position: left top;
-    background-repeat: repeat;
-    padding: 20px; " alt="" />
-
-<h3 class="col-sm-6" id="username">User Name</h3>
-<h4 class="col-xs-7" id="practice Areas">Practice Areas</h5>
-<p class="col-xs-7" id="area1">Area1</p>
-<p class="col-xs-7" id="area2">Area2</p>
-<p class="col-xs-7" id="area3">Area3</p>
-
-
-
-         </div>
-	</div>
 
 <!--FORMS List-->
 <div id="basic-form" style="display:none;" class="col-sm-6 col-xs-2">
@@ -361,17 +341,17 @@ function addfield4(divName){
                        
                         <div class="">
                             <label>*State :</label>
-                            <input type="state" placeholder="State" class="form-control" required="required">
+                            <input type="state" placeholder="State" class="form-control" required="required" id="bar_state">
                         </div>
                        
                         <div class="">
                             <label>*Bar I.D :</label>
-                            <input type="email" placeholder="Bar I.D" class="form-control" required="required">
+                            <input type="email" placeholder="Bar I.D" class="form-control" required="required" id="bar_id">
                         </div>
                        <div  id="dynamicyear">
                         <div class="">
                             <label>*Year :</label>
-                            <input type="text" placeholder="Year" class="form-control" required="required ">
+                            <input type="text" placeholder="Year" class="form-control" required="required " id="bar_year">
                            <button onClick="addfield3('dynamicyear');" >Add</button>  
                         </div>
       
@@ -390,7 +370,7 @@ function addfield4(divName){
     					</div>
     					</a>
     					</div>
-    					<button type="submit">save</button>
+    					<button type="submit" onClick="save_bar_data()">save</button>
 <!--    <div class="change-picture-slide" >
         <input accept="image/*" type="file" id="upload" name="upload" style="visibility: hidden; width: 1px; height: 1px" />
         <a href="" onclick="changePicture(); return false">Change Picture</a>
@@ -441,17 +421,6 @@ function addfield4(divName){
 
 
 
-<!--User Profile-->
-
-		<div class="details" style="">
-			<ul>
-				<li class="">
-				<a href="" >About</a></li>
-				<li>
-				<a href="">Reviews</a></li>
-				
-			</ul>
-		</div>
 
 </div>
 
